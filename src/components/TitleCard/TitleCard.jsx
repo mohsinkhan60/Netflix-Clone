@@ -1,5 +1,6 @@
 import "./TitleCard.css";
-import cards_data from "../../assets/cards/cards_data.json";
+import cards_data from "../assets/cards/cards_data";
+
 import { useRef } from "react";
 import { useEffect } from "react";
 
