@@ -4,6 +4,7 @@ import "./TitleCard.css";
 
 import { useRef, useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const TitleCard = ({title, category}) => {
   const [apiData, setApiData] = useState([]);
@@ -38,10 +39,10 @@ export const TitleCard = ({title, category}) => {
       <div className="card-list" ref={cardsRef}>
         {apiData.map((card, index) => {
           return (
-            <div className="card" key={index}>
+            <Link to={`/player/${card.id}`} className="card" key={index}>
               <img src={`https://image.tmdb.org/t/p/w500`+card.backdrop_path} alt="" />
               <p>{card.original_title}</p>
-            </div>
+            </Link>
           );
         })}
       </div>
