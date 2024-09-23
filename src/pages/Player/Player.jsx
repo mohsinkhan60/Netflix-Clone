@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Player.css"
 import back_arrow_icon from "../../assets/back_arrow_icon.png"
 import { useEffect } from "react";

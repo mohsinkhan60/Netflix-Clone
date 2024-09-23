@@ -64,3 +64,7 @@
 .navbar-profile:hover .dropdown{
    display: block;
 }
+.nav-dark {
+   background: #141414;
+   transition: background 0.3s ease; /* Optional: for smooth transition */
+}
