@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBkLTnXPB8gogiVoyW8SVbFfnu1yirqhNc",
@@ -32,7 +33,7 @@ export const signup = async (name, email, password) => {
     });
   } catch (error) {
     console.log(error);
-    alert(error);
+    toast.error(error.code.split("/")[1].split("-").join(" "));
   }
 };
 
@@ -42,7 +43,7 @@ export const login = async (email, password) => {
     console.log("Login successful");
   } catch (error) {
     console.error("Error logging in:", error);
-    alert("Login failed: " + error.message); // Use error.message for clarity
+    toast.error(error.code.split("/")[1].split("-").join(" "));
   }
 };
 
